@@ -2,6 +2,7 @@
 var dateToday = moment().format("YYYY MMMM DD");
 $("#currentDay").html(dateToday);
 
+// when user clicks save button for time block, text for event is saved in local storage
 $(document).ready(function () {
 // saveBtn click listener
 $(".saveBtn").on("click", function () {
@@ -46,7 +47,7 @@ hourUpdater();
 
 // when user clicks into a time block, user can enter an event
 
-// when user clicks save button for time block, text for event is saved in local storage
+
 
 
 
