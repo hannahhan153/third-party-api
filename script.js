@@ -4,13 +4,13 @@ $("#currentDay").html(dateToday);
 
 // when user clicks save button for time block, text for event is saved in local storage
 $(document).ready(function () {
-// saveBtn click listener
-$(".saveBtn").on("click", function () {
-    var text = $(this).siblings(".description").val();
-    console.log(text);
-    var time = $(this).parent().attr("id");
-    localStorage.setItem(time, text);
-})
+    // saveBtn click listener
+    $(".saveBtn").on("click", function () {
+        var text = $(this).siblings(".description").val();
+        console.log(text);
+        var time = $(this).parent().attr("id");
+        localStorage.setItem(time, text);
+    })
 })
 
 // when user refresh page, saved events persist
@@ -31,24 +31,15 @@ $("#hour-19 .description").val(localStorage.getItem("hour-19"));
 // when user views time blocks for the day, each time block is color-coded to indicate past, present, or future
 function hourUpdater() {
     var hourCurrent = moment().hours();
-    $(".time-block").each(function(){
+    $(".time-block").each(function () {
         var blockTime = parseInt($(this).attr("id").split("-")[1])
-        if (blockTime < hourCurrent){
+        if (blockTime < hourCurrent) {
             $(this).addClass("past");
-        }
-        else if (blockTime === hourCurrent){
+        } else if (blockTime === hourCurrent) {
             $(this).addClass("present");
-        }
-        else {
+        } else {
             $(this).addClass("future");
         }
     })
 }
 hourUpdater();
-
-// when user clicks into a time block, user can enter an event
-
-
-
-
-
