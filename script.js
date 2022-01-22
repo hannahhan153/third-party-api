@@ -1,4 +1,6 @@
 // when user opens planner, current day is displayed at top of calendar
+var dateToday = moment().format("YYYY MMMM DD");
+$("#currentDay").html(dateToday);
 
 // when user scrolls down, time blocks for standard business hours displayed
 
